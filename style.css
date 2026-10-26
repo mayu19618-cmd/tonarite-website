@@ -28,3 +28,42 @@ main{background:#fffaf5 url('assets/site-watercolor-bg.webp') center top/100% au
 
 /* News & stories: watercolor theme */
 .news-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.news-heading h2{margin:0}.news-more,.article-back{font-weight:700;text-underline-offset:4px}.article-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.article-card{display:block;overflow:hidden;border-radius:14px;background:rgba(255,255,255,.85);text-decoration:none;box-shadow:0 8px 30px #1a183112;transition:transform .2s ease,box-shadow .2s ease}.article-card:hover{transform:translateY(-3px);box-shadow:0 12px 34px #1a18311e}.article-card img{width:100%;height:175px;object-fit:cover;display:block}.article-card-copy{padding:17px}.article-card h3{margin:6px 0 8px;font-size:18px;line-height:1.5}.article-card p{font-size:13px;line-height:1.8;color:#55556b}.article-category{color:#66705e;font-size:12px;font-weight:700;letter-spacing:.04em}.article-next{font-size:13px;font-weight:700}.article-lead{font-size:16px}.article-demo-note{background:#fff9e9;border-left:3px solid #cfb777;padding:10px 13px;font-size:12px;line-height:1.6;color:#5a5146}.article-filter{display:flex;gap:9px;flex-wrap:wrap;margin:25px 0}.article-filter button{padding:7px 15px;border:1px solid #bac5ae;border-radius:99px;background:#ffffffc7;font-size:13px}.article-filter button.active{background:#849678;color:white;border-color:#849678}.article-detail{max-width:850px;margin:0 auto;padding:40px clamp(20px,6vw,65px) 80px}.article-detail h1{font-size:clamp(23px,4vw,36px);line-height:1.5;margin:10px 0 30px}.article-feature-image{display:block;width:100%;aspect-ratio:1.8;object-fit:cover;border-radius:12px}.article-content{font-size:16px;line-height:2.15;margin:30px 0}.article-content p{margin:0 0 1.5em}.article-back{display:inline-block;margin:15px 0}.article-detail .article-category{margin-top:20px}@media(max-width:800px){.article-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:560px){.article-grid{grid-template-columns:1fr}.article-card img{height:190px}.news-heading{align-items:flex-start}.news-more{font-size:12px}}
+
+/* Mobile only: compact swipeable latest articles on the homepage.
+   The full article listing and desktop three-column layout are unchanged. */
+@media (max-width: 560px) {
+  .news-preview { padding-right: 0; overflow: hidden; }
+  .news-preview .news-heading { padding-right: 6%; align-items: center; }
+  .news-preview .news-heading h2 { font-size: 20px; }
+  .news-preview #latest-articles {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 12px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0 20px;
+    padding: 4px 20px 18px 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+  .news-preview #latest-articles .article-card {
+    flex: 0 0 min(62vw, 220px);
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+  .news-preview #latest-articles .article-card img { height: 104px; }
+  .news-preview #latest-articles .article-card-copy { padding: 10px 12px 12px; }
+  .news-preview #latest-articles .article-card h3 {
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 4px 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  .news-preview #latest-articles .article-card p { display: none; }
+  .news-preview #latest-articles .article-category,
+  .news-preview #latest-articles .article-next { font-size: 10px; }
+}
