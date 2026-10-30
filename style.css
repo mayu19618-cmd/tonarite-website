@@ -79,3 +79,12 @@ main{background:#fffaf5 url('assets/site-watercolor-bg.webp') center top/100% au
 .footer-logo-link{display:inline-flex;align-items:center;justify-content:center;background:#fff;border-radius:10px;padding:7px;margin-bottom:14px;}
 .footer-logo{width:124px;height:109px;object-fit:contain;display:block;}
 @media(max-width:680px){.site-header{min-height:78px}.site-header .brand-logo{width:66px;height:62px}.footer-logo{width:100px;height:88px}}
+
+/* White footer: blend seamlessly with the white logo background */
+.footer{background:#ffffff;color:#171720;}
+.footer-inner{background:#ffffff;}
+.footer h2,.footer h3,.footer a{color:#171720;}
+.footer p{color:#53575d;}
+.footer-logo-link{background:#ffffff;border-radius:0;padding:0;}
+.footer .copyright,.copyright{background:#ffffff;color:#6d6872;border-top:1px solid #ece8e8;}
+.footer a:hover{color:#b95b7b;}
