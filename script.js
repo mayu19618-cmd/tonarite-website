@@ -17,3 +17,14 @@ if(page==='donation'){app.querySelectorAll('[data-frequency]').forEach(b=>b.addE
 if(page==='contact'){const params=new URLSearchParams(location.search);if(params.get('type')==='general')app.querySelector('input[value="general"]').checked=true;app.querySelector('#contact-form').addEventListener('submit',e=>{e.preventDefault();const s=app.querySelector('#form-status');s.hidden=false;s.textContent=d.formSent})}
 if(location.hash&&page==='projects')requestAnimationFrame(()=>document.querySelector(location.hash)?.scrollIntoView())}
 render();
+// 情報公開・資料ダウンロード：メニュー表記を言語に合わせて更新
+(function(){
+ const labels={ja:'情報公開・資料ダウンロード',en:'Disclosure & Documents',es:'Transparencia y documentos',zh:'信息公开与资料下载'};
+ const sel=document.getElementById('lang');
+ function updateDisclosureLabels(){
+   const label=labels[sel?.value]||labels.ja;
+   document.querySelectorAll('[data-disclosure-menu]').forEach(link=>link.textContent=label);
+ }
+ updateDisclosureLabels();
+ sel?.addEventListener('change',updateDisclosureLabels);
+})();
